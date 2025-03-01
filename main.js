@@ -13,7 +13,7 @@ $("header > nav > button").on("click", async (e) => {
           $("contents").append(`
                 <div class="card">
             <img
-              src="/img/${project.thumbnail}"
+              src="./img/${project.thumbnail}"
               alt="${title} thumbnail Image"
               class="thumbnail"
             />
