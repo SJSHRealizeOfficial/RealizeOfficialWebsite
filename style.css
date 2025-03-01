@@ -1,0 +1,280 @@
+@font-face {
+  font-family: "realize";
+  src: url(/font/Realize-Regular.otf);
+}
+html,
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-family: "Roboto", sans-serif;
+  background-color: #f0f0f0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+header {
+  padding: 3vh 5vw;
+  display: flex;
+  align-items: center;
+}
+
+header h1 {
+  letter-spacing: 0.07em;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 2em;
+  color: #333;
+}
+header nav {
+  margin: 0;
+  margin-left: auto;
+}
+
+header nav button {
+  width: 10vh;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  padding: 0.5em 1em;
+  position: relative;
+  z-index: 0;
+  overflow: hidden;
+  margin: 2px 0;
+}
+
+header nav button::before {
+  content: "";
+  color: black;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #e0e0e0;
+  transition: translate 250ms;
+  z-index: -1;
+  translate: 0 100%;
+}
+
+header nav button:hover {
+  border-bottom: 2px solid #333;
+  margin-bottom: 0;
+}
+
+header nav button:hover::before {
+  translate: 0 0;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 1em;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  max-height: 35vmax;
+  overflow: hidden scroll;
+  scrollbar-width: none;
+  transition: max-height 250ms;
+}
+contents {
+  width: 80vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-self: center;
+}
+
+@media (max-width: 1024px) {
+  contents {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+/* @media (max-width: 768px) {
+  contents {
+    grid-template-columns: 1fr;
+  }
+} */
+@media (max-width: 512px) {
+  contents {
+    grid-template-columns: 1fr;
+  }
+  .cardDescription {
+    display: none;
+  }
+  header nav button {
+    display: none;
+  }
+}
+@media (max-width: 256px) {
+  header nav button {
+    display: none;
+  }
+  contents {
+    grid-template-columns: 1fr;
+  }
+  .cardDescription {
+    display: none;
+  }
+}
+
+.card img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.card h2 {
+  margin: 0;
+  font-size: 1.5em;
+}
+
+.card p {
+  margin: 0;
+  font-size: 1em;
+}
+
+footer {
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 1em;
+  text-align: center;
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+footer button {
+  color: #333;
+  background-color: #f0f0f0;
+  border: none;
+}
+
+/*github repo preview*/
+/* github-repo-preview.css */
+.repo-container {
+  align-self: stretch;
+  margin: 2vh 0.5vh;
+}
+
+.repo-preview {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  background-color: #ffffff;
+  border: 1px solid #e1e4e8;
+  border-radius: 6px;
+  padding: 1em;
+  transition: box-shadow 0.2s ease-in-out;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  min-width: 0; /* Add this to enable proper text wrapping */
+}
+
+.repo-preview:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.repo-header {
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  display: flex; /* Add display:flex */
+  flex-wrap: wrap; /* Allow wrapping of child elements */
+}
+
+.repo-name {
+  color: #0366d6;
+  font-size: 18px;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0;
+  word-wrap: break-word;
+  word-break: break-all; /* Force break long words */
+  max-width: 100%; /* Respect container width */
+  min-width: 0; /* Enable text truncation */
+  flex: 1; /* Take remaining space */
+}
+
+.repo-name:hover {
+  text-decoration: underline;
+}
+
+.repo-visibility {
+  background: #f1f8ff;
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 12px;
+  color: #24292e;
+}
+
+.repo-description {
+  color: #586069;
+  font-size: 14px;
+  margin: 8px 0;
+}
+
+.repo-stats {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  font-size: 14px;
+  color: #586069;
+  flex-wrap: wrap;
+}
+
+.repo-stat {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.language-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.error-message {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+  color: #cb2431;
+  background-color: #ffeef0;
+  padding: 1em;
+  border-radius: 6px;
+  align-items: center;
+  gap: 8px;
+  height: 100%;
+  display: flex;
+}
+
+.loading {
+  padding: 16px;
+}
+
+.loading-bar {
+  height: 16px;
+  background: #eee;
+  border-radius: 4px;
+  margin: 8px 0;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0.6;
+  }
+}

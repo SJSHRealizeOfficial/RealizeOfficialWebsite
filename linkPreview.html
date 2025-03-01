@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SJSH Realize Official Webpage</title>
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.slim.min.js"
+      integrity="sha256-kmHvs0B+OpCW5GVHUNjv9rOmY0IvSIRcf7zGUDTDQM8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <script src="linkPreview.js"></script>
+
+    <!-- 그 다음 사용할 컨테이너를 만듭니다 -->
+    <div id="repo-container"></div>
+
+    <!-- 마지막으로 스크립트를 실행합니다 -->
+    <script>
+      // 매니저 생성
+      const manager = new GitHubPreview.GitHubRepoManager("repo-container");
+
+      // 레포지토리 추가
+      manager.addRepo("https://github.com/facebook/react");
+      manager.addRepo("https://github.com/vuejs/vue");
+    </script>
+  </body>
+</html>
