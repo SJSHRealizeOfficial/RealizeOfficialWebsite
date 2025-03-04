@@ -40,5 +40,6 @@ $("header > nav > button").on("click", async (e) => {
     // 여러 레포지토리 추가
     manager.addRepo("https://github.com/maruson08/pumpitup");
     manager.addRepo("https://github.com/maruson08/Simple_Controller");
+    manager.addRepo("https://github.com/SJSHRealizeOfficial/RealizeOfficialWebsite");
   }
 });
