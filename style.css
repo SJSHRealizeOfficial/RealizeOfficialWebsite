@@ -9,6 +9,7 @@ body {
   min-height: 100vh;
   font-family: "Roboto", sans-serif;
   background-color: #f0f0f0;
+  scrollbar-width: none;
 }
 
 body {
@@ -90,6 +91,7 @@ contents {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   align-self: center;
+  scrollbar-width: none;
 }
 
 @media (max-width: 1024px) {
@@ -106,23 +108,25 @@ contents {
   contents {
     grid-template-columns: 1fr;
   }
-  .cardDescription {
+  /* .cardDescription {
     display: none;
-  }
-  header nav button {
-    display: none;
+  } */
+  header {
+    display: block;
+    text-align: center;
   }
 }
 @media (max-width: 256px) {
-  header nav button {
-    display: none;
+  header {
+    display: block;
+    text-align: center;
   }
   contents {
     grid-template-columns: 1fr;
   }
-  .cardDescription {
+  /* .cardDescription {
     display: none;
-  }
+  } */
 }
 
 .card img {
@@ -156,7 +160,6 @@ footer button {
 }
 
 /*github repo preview*/
-/* github-repo-preview.css */
 .repo-container {
   align-self: stretch;
   margin: 2vh 0.5vh;
@@ -174,7 +177,7 @@ footer button {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  min-width: 0; /* Add this to enable proper text wrapping */
+  min-width: 0;
 }
 
 .repo-preview:hover {
@@ -185,8 +188,8 @@ footer button {
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
-  display: flex; /* Add display:flex */
-  flex-wrap: wrap; /* Allow wrapping of child elements */
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .repo-name {
@@ -196,10 +199,10 @@ footer button {
   text-decoration: none;
   margin: 0;
   word-wrap: break-word;
-  word-break: break-all; /* Force break long words */
-  max-width: 100%; /* Respect container width */
-  min-width: 0; /* Enable text truncation */
-  flex: 1; /* Take remaining space */
+  word-break: break-all;
+  max-width: 100%;
+  min-width: 0;
+  flex: 1;
 }
 
 .repo-name:hover {
