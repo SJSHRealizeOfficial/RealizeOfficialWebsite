@@ -115,6 +115,15 @@ contents {
     display: block;
     text-align: center;
   }
+  header nav button::before {
+    display: none;
+  }
+  header nav button:hover {
+    border-bottom: none;
+  }
+  header nav button:hover::before {
+    display: none;
+  }
 }
 @media (max-width: 256px) {
   header {
